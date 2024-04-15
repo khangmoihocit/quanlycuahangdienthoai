@@ -7,6 +7,7 @@ import quanly.QuanLyHoaDon;
 import quanly.QuanLyKhachHang;
 import quanly.QuanLyKho;
 import quanly.QuanLySanPham;
+import quanly.SanPham;
 
 public class Main {
 	static Scanner sc = new Scanner(System.in);
@@ -79,7 +80,7 @@ public class Main {
 				+ "5.Cập nhật thông tin sản phẩm\n"
 				+ "6. Sắp xếp theo giá từ cao --> thấp\n"
 				+ "7. Sắp xếp theo giá từ thấp --> cao \n"
-				+ "8.ghi dữ liệu vô file\n"
+				+ "8. ghi dữ liệu vô file\n"
 				+ "9. Xóa sản phẩm\n"
 				+ "0. Thoát)");
 	}
@@ -101,7 +102,15 @@ public class Main {
 			sc.nextLine();
 			System.out.print("Nhập mã sản phẩm muốn tìm: ");
 			String masp = sc.nextLine();
-			System.out.println(qlsp.timKiemSP(masp));
+			SanPham sp = qlsp.timKiemSP(masp);
+			if (sp != null){
+				String format = "%-5s %-25s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
+				String tieuDe = String.format(format, "Mã SP", "Tên SP", "SL", "thương hiệu", "hệ điều hành", 
+				"kích thước màn", "chip xử lý", "pin", "Xuất xứ", "giá(VND)");
+				System.out.println(tieuDe);
+				System.out.println(sp);
+			}
+			else System.out.println("Mã sản phẩm không tồn tại!");
 			break;
 		}
 		case 5:{
