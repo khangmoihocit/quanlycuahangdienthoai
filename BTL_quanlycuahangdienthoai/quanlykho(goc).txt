@@ -1,0 +1,16 @@
+001
+Khu vực A
+Realme
+nhanVien1
+002
+Khu vực B
+vivo
+nhanVien2
+003
+Khu vực C
+Samsung
+nhanVien3
+004
+Khu vực C
+xiaomi
+phạm văn khang

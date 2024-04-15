@@ -1,0 +1,180 @@
+Oppo F21
+3
+Oppo
+Android
+6.5 inch
+MediaTek Dimensity 1200
+4500mAh
+Trung Quốc
+7.200.000VND
+Redmi Note 11 Pro
+4
+Xiaomi
+Android
+6.78 inch
+Qualcomm Snapdragon 778G
+5000mAh
+Trung Quốc
+6.900.000VND
+Samsung Galaxy A53
+5
+Samsung
+Android
+6.5 inch
+Exynos 1200
+4800mAh
+Hàn Quốc
+8.500.000VND
+Huawei P50 Lite
+12
+Huawei
+Android
+6.4 inch
+Kirin 820
+4200mAh
+Trung Quốc
+5.300.000VND
+Vivo V23
+8
+Vivo
+Android
+6.44 inch
+Qualcomm Snapdragon 765G
+4300mAh
+Trung Quốc
+6.800.000VND
+Realme GT Neo 3
+8
+Realme
+Android
+6.7 inch
+MediaTek Dimensity 9000
+5000mAh
+Trung Quốc
+7.800.000VND
+OnePlus 10R
+9
+OnePlus
+Android
+6.5 inch
+Qualcomm Snapdragon 870
+4500mAh
+Trung Quốc
+9.000.000VND
+Xiaomi Mi 12 Lite
+7
+Xiaomi
+Android
+6.6 inch
+Qualcomm Snapdragon 888
+4600mAh
+Trung Quốc
+8.700.000VND
+Oppo Reno7
+7
+Oppo
+Android
+6.5 inch
+MediaTek Dimensity 900
+4300mAh
+Trung Quốc
+7.600.000VND
+Samsung Galaxy M53
+12
+Samsung
+Android
+6.6 inch
+Exynos 1300
+4700mAh
+Hàn Quốc
+7.400.000VND
+Xiaomi Redmi Note 11
+10
+Xiaomi
+Android
+6.6 inch
+MediaTek Helio G96
+5000mAh
+Trung Quốc
+4.500.000VND
+Huawei Nova 9 SE
+12
+Huawei
+Android
+6.5 inch
+Qualcomm Snapdragon 778G
+4300mAh
+Trung Quốc
+6.200.000VND
+Vivo Y73s
+15
+Vivo
+Android
+6.44 inch
+MediaTek Dimensity 810
+4000mAh
+Trung Quốc
+5.000.000VND
+Realme GT 2 Pro
+16
+Realme
+Android
+6.7 inch
+Qualcomm Snapdragon 8 Gen 1
+4500mAh
+Trung Quốc
+10.000.000VND
+OnePlus Nord CE 2
+7
+OnePlus
+Android
+6.43 inch
+Qualcomm Snapdragon 695
+4500mAh
+Trung Quốc
+5.800.000VND
+Samsung Galaxy A73
+5
+Samsung
+Android
+6.7 inch
+Qualcomm Snapdragon 778G
+4800mAh
+Hàn Quốc
+9.200.000VND
+Oppo Find X5 Lite
+16
+Oppo
+Android
+6.43 inch
+MediaTek Dimensity 900
+4200mAh
+Trung Quốc
+6.700.000VND
+Xiaomi Poco X4 Pro
+11
+Xiaomi
+Android
+6.67 inch
+Qualcomm Snapdragon 695
+5000mAh
+Trung Quốc
+6.000.000VND
+Huawei Honor 50
+21
+Huawei
+Android
+6.57 inch
+Qualcomm Snapdragon 778G
+4300mAh
+Trung Quốc
+7.400.000VND
+Vivo iQOO Neo 6
+10
+Vivo
+Android
+6.78 inch
+Qualcomm Snapdragon 8 Gen 1
+4800mAh
+Trung Quốc
+8.900.000VND
