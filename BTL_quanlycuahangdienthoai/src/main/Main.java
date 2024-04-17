@@ -45,14 +45,14 @@ public class Main {
 		case 5:{
 			sc.nextLine();
 			System.out.print("Nhập ID khách hàng muốn xóa: "); 
-			String c = sc.nextLine();
-			qlkh.xoaKH(c); break;
+			String id = sc.nextLine();
+			qlkh.xoaKH(id); break;
 		}
 		case 6:{
 			sc.nextLine();
 			System.out.print("Nhập ID khách hàng muốn cập nhập: "); 
-			String i = sc.nextLine();
-			qlkh.capNhapKH(i); break;
+			String id = sc.nextLine();
+			qlkh.capNhapKH(id); break;
 		}
 		case 7:{
 			qlkh.sapXepTheoTen();
@@ -246,6 +246,14 @@ public class Main {
 				qlk.capNhatKho(maKho);
 				break;
 			}
+			case 0:{
+				System.out.println("Đã thoát chương trình!");
+				break;
+			}
+			default:{
+				System.err.println("Lỗi! Vui lòng nhập theo menu");
+				break;
+			}
 		}
 	}
 	
@@ -276,19 +284,20 @@ public class Main {
 			}
 			//quản lý sản phẩm
 			else if(chon == 3) {
-				menuSanPham(); System.out.print("chon: "); chon3 = sc.nextInt();
+				menuSanPham(); System.out.print("chọn: "); chon3 = sc.nextInt();
 				sanPham(qlsp, chon3);
 			}
 			//quan ly hoa don
 			else if (chon == 4) {
-				menuHoaDon(); System.out.print("chon: "); chon4 = sc.nextInt();
+				menuHoaDon(); System.out.print("chọn: "); chon4 = sc.nextInt();
 				hoaDon(qlhd, qlkh, qlsp, chon4);
 			}
 			//quan ly kho
 			else if (chon == 5){
 				qlsp.docFile();
-				menuKho(); System.out.print("chon: "); chon5 = sc.nextInt();
+				menuKho(); System.out.print("chọn: "); chon5 = sc.nextInt();
 				kho(qlk, qlsp, chon5);
+				
 			}
 			else {
 				System.err.println("coming sôn");

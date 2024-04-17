@@ -157,6 +157,7 @@ public class SanPham {
 		}
 		return res;
 	}
+
 	@Override
 	public String toString() {
 		String format = "%-5s %-25s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
@@ -169,6 +170,7 @@ public class SanPham {
 	public void setSoLuongSP(String soLuongSP) {
 		this.soLuongSP = soLuongSP;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -192,9 +194,4 @@ public class SanPham {
 			return false;
 		return true;
 	}
-
-	
-	
-	
-	
 }

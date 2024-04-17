@@ -1,6 +1,6 @@
 
 ------------------THÔNG TIN HÓA ĐƠN-----------------
-
+                   THÔNG TIN HÓA ĐƠN
 mã hóa đơn : 001
 Thông tin khách hàng :
 ID         Họ và tên            tuổi       địa chỉ                   số điện thoại   email               
@@ -9,10 +9,7 @@ Thông tin sản phẩm :
 Mã SP Tên SP                    SL    thương hiệu     hệ điều hành    kích thước màn  chip xử lý                   pin        Xuất xứ         giá(VND)       
 001   Oppo F21                  3     Oppo            Android         6.5 inch        MediaTek Dimensity 1200      4500mAh    Trung Quốc      7.200.000VND   
 002   Redmi Note 11 Pro         4     Xiaomi          Android         6.78 inch       Qualcomm Snapdragon 778G     5000mAh    Trung Quốc      6.900.000VND   
-019   Huawei Honor 50           21    Huawei          Android         6.57 inch       Qualcomm Snapdragon 778G     4300mAh    Trung Quốc      7.400.000VND   
-020   Vivo iQOO Neo 6           10    Vivo            Android         6.78 inch       Qualcomm Snapdragon 8 Gen 1  4800mAh    Trung Quốc      8.900.000VND   
-018   Xiaomi Poco X4 Pro        11    Xiaomi          Android         6.67 inch       Qualcomm Snapdragon 695      5000mAh    Trung Quốc      6.000.000VND   
-009   Oppo Reno7                7     Oppo            Android         6.5 inch        MediaTek Dimensity 900       4300mAh    Trung Quốc      7.600.000VND   
+003   Samsung Galaxy A53        5     Samsung         Android         6.5 inch        Exynos 1200                  4800mAh    Hàn Quốc        8.500.000VND   
 
-Thành tiền: 44000000VND
-Ngày tạo hóa đơn: 15-04-2024 16:03:48
+Thành tiền: 22600000VND
+Ngày tạo hóa đơn: 16-04-2024 12:01:12

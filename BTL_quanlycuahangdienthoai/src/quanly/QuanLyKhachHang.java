@@ -51,7 +51,7 @@ public class QuanLyKhachHang {
 	}
 	public KhachHang timKH(String id) {
 		for (KhachHang x : dsKhachHang) {
-			if (x.getId().equals(id)) {
+			if (x.getId().equalsIgnoreCase(id)) {
 				return x;
 			}
 		}
@@ -99,4 +99,5 @@ public class QuanLyKhachHang {
 			}
 		});
 	}
+
 }

@@ -55,6 +55,7 @@ public class QuanLyHoaDon {
 	//loc hoa don theo ngay
 	public void locHoaDonTheoNgay(){
 		Scanner sc = new Scanner(System.in);
+		//kiem tra du lieu nguoi nhap
 		Pattern pattern = Pattern.compile("^[0-9]{2}-[0-9]{2}-[0-9]{4}$");
 		while(true){
 			System.out.print("Nhập thời gian(dd-mm-yyyy): ");

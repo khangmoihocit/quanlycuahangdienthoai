@@ -126,12 +126,11 @@ public class HoaDon {
 		String format2  = "%-10s %-20s %-10s %-25s %-15s %-20s";
 		String tieuDe2 = String.format(format2, "ID", "Họ và tên", "tuổi", "địa chỉ", "số điện thoại", "email");
 		
-		return "\nmã hóa đơn : " + getMaHD() 
+		return "                   THÔNG TIN HÓA ĐƠN\nmã hóa đơn : " + getMaHD() 
 			+ "\nThông tin khách hàng :\n"+ tieuDe2 + "\n"+ getKhachHang() 
 			+ "\nThông tin sản phẩm :\n" + tieuDe1+ "\n" + getdsSanPham()
 			+ "\nThành tiền: "  + getThanhTien() + "VND"
 			+ "\nNgày tạo hóa đơn: " + getNgayTaoHD();
 	}
 
-	
 }

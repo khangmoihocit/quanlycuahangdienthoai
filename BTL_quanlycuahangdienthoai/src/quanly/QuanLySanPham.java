@@ -113,6 +113,7 @@ public class QuanLySanPham {
 		SanPham x = timKiemSP(maSP);
 		if (x != null) {
 			dsSanPham.remove(x);
+			System.out.println("xóa thành công!");
 		}
 		else {
 			System.out.println("mã sản phẩm không tồn tại");
