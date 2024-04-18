@@ -11,7 +11,7 @@ import quanlifile.QuanLyFile;
 public class HoaDon {
 	private String maHD, ngayTaoHD;
 	private KhachHang khachHang;
-	private ArrayList<SanPham> dsSanPham;
+	private Set<SanPham> dsSanPham;
 	private QuanLyFile quanLyFile;
 	static int a = 0;
 	// khởi tạo mã hoa don tự động tăng
