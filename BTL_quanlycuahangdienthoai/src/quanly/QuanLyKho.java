@@ -16,11 +16,25 @@ public class QuanLyKho {
         dsKho.add(kho);
     }
 
+    //kiem tra maKho da ton tai chua
+    public boolean kiemTraMaKho(String maKho) {
+        for (Kho kho : dsKho) {
+            if (kho.getMaKho().equals(maKho)) {
+                return true;
+            }
+        }
+        return false;
+    }
     //nhan vien nhap kho
     public void nhapKho() {
         Kho kho = new Kho();
         kho.themKho();
-        dsKho.add(kho);
+        if (!kiemTraMaKho(kho.getMaKho())) {
+            dsKho.add(kho);
+            System.out.println("Thêm kho thành công!");
+        } else {
+            System.out.println("Mã kho đã tồn tại!");
+        }
     }
     // hien thi danh sach kho
     public void hienThiDanhSachKho() {

@@ -83,7 +83,7 @@ public class Main {
 		System.out.println("6. Đọc file");
 		System.out.println("7. Ghi file");
 		System.out.println("8. Kết thúc chương trình");
-		System.out.print("0. Quay lại menu chính");
+		System.out.println("0. Quay lại menu chính");
 	}
 	public static void nhanVien(QuanLyNhanVien qlnv, int chon){
 			switch(chon) {
