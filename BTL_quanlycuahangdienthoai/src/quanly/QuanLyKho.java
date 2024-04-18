@@ -51,11 +51,14 @@ public class QuanLyKho {
         for (Kho kho : dsKho) {
             if (kho.getMaKho().equals(maKho)) {
                 kho.themKho();
+                System.out.println("Cập nhật thành công!");
+                break;
+            }
+            else{
+                System.out.println("Không tìm thấy mã kho cần cập nhật!");
                 break;
             }
         }
-        System.out.println("không tìm thấy mã kho cần cập nhật!");
     }
-
 
 }

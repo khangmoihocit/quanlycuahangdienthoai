@@ -1,5 +1,5 @@
 Oppo F21
-3
+5
 Oppo
 Android
 6.5 inch
@@ -8,7 +8,7 @@ MediaTek Dimensity 1200
 Trung Quốc
 7.200.000VND
 Redmi Note 11 Pro
-4
+2
 Xiaomi
 Android
 6.78 inch
@@ -26,7 +26,7 @@ Exynos 1200
 Hàn Quốc
 8.500.000VND
 Huawei P50 Lite
-12
+11
 Huawei
 Android
 6.4 inch
@@ -35,7 +35,7 @@ Kirin 820
 Trung Quốc
 5.300.000VND
 Vivo V23
-8
+6
 Vivo
 Android
 6.44 inch
@@ -44,7 +44,7 @@ Qualcomm Snapdragon 765G
 Trung Quốc
 6.800.000VND
 Realme GT Neo 3
-8
+6
 Realme
 Android
 6.7 inch
@@ -71,7 +71,7 @@ Qualcomm Snapdragon 888
 Trung Quốc
 8.700.000VND
 Oppo Reno7
-7
+5
 Oppo
 Android
 6.5 inch
@@ -161,7 +161,7 @@ Qualcomm Snapdragon 695
 Trung Quốc
 6.000.000VND
 Huawei Honor 50
-21
+19
 Huawei
 Android
 6.57 inch
@@ -170,7 +170,7 @@ Qualcomm Snapdragon 778G
 Trung Quốc
 7.400.000VND
 Vivo iQOO Neo 6
-10
+9
 Vivo
 Android
 6.78 inch

@@ -1,6 +1,5 @@
 package quanly;
 
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -9,7 +8,7 @@ public class Kho {
     private String maKho, tenKhuVuc, ghiChu;
     private String tenNV;
     // private ArrayList<SanPham> dsSanPham;
-    private Set<SanPham> dsSanPham;
+    private Set<SanPham> dsSanPham; //sử dụng set để tránh lưu trùng sản phẩm có trong danh sách
     public Kho(String maKho, String tenKhuVuc, String ghiChu, String tenNV) {
         this.maKho = maKho;
         this.tenKhuVuc = tenKhuVuc;
@@ -44,20 +43,25 @@ public class Kho {
     }
     //thong tin chi tiet kho
     public void thongTinChiTietKho() {
+        System.out.println("            THÔNG TIN KHO");
         System.out.println("Mã kho: " + maKho);
         System.out.println("Tên khu vực: " + tenKhuVuc);
         System.out.println("Ghi chú: " + ghiChu);
         System.out.println("Nhân viên quản lý: " + getTenNV());
         System.out.println("Danh sách sản phẩm: ");
-        String format = "%-5s %-25s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
+        String format = "%-5s %-20s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
 		String tieuDe = String.format(format, "Mã SP", "Tên SP", "SL", "thương hiệu", "hệ điều hành", 
 		"kích thước màn", "chip xử lý", "pin", "Xuất xứ", "giá(VND)");
-		System.out.println(tieuDe);
-        for (SanPham sanPham : dsSanPham){
-            System.out.println(sanPham);
+        if (dsSanPham.isEmpty()){
+            System.out.println("Không có sản phẩm nào trong kho!");
+        }
+        else {
+		    System.out.println(tieuDe);
+            for (SanPham sanPham : dsSanPham){
+                System.out.println(sanPham);
+            }
         }
     }
-    
 
     @Override
     public String toString() {

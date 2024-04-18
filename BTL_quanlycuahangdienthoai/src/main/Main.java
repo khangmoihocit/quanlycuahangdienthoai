@@ -6,6 +6,7 @@ import quanly.HoaDon;
 import quanly.QuanLyHoaDon;
 import quanly.QuanLyKhachHang;
 import quanly.QuanLyKho;
+import quanly.QuanLyNhanVien;
 import quanly.QuanLySanPham;
 import quanly.SanPham;
 
@@ -20,10 +21,15 @@ public class Main {
 				+ "5. Xóa khách hàng\n"
 				+ "6. Cập nhật thông tin khách hàng\n" 
 				+ "7. Sắp xếp theo tên khách hàng\n"
-				+ "0. Thoát");
+				+ "8. Kết thúc chương trình\n"
+				+ "0. Quay lại menu chính");
+
 	}
 	public static void khachHang(QuanLyKhachHang qlkh,int chon) {
 		switch (chon) {
+		case 0:{
+			System.out.println("---"); break;
+		}
 		case 1: {
 			qlkh.inputKH();break;
 		}
@@ -33,7 +39,7 @@ public class Main {
 		}
 		case 4:{
 			qlkh.ghiFile(); 
-			System.out.println("ghi file thành công");
+			System.out.println("Ghi thành công vào file thongtinkhachhang.txt!");
 			break;
 		}
 		case 3:{
@@ -58,31 +64,101 @@ public class Main {
 			qlkh.sapXepTheoTen();
 			qlkh.hienKH(); break;
 		}
-		case 0:{
-			System.out.println("...");break;
+		case 8:{
+			System.out.println("đã thoát chương trình!");break;
 		}
 		default:{
-			System.err.println("loi"); break;
+			System.err.println("Lỗi! Vui lòng nhập theo menu."); break;
 		}
 		}
 	}
 	
 	public static void menuNhanVien() {
-		System.out.println("-------------------------------MENU------------------------------");	
+		System.out.println("-------------------------------MENU------------------------------");
+		System.out.println("1. Thêm nhân viên");
+		System.out.println("2. Hiện nhân viên");
+		System.out.println("3. Tìm nhân viên");
+		System.out.println("4. Xóa nhân viên");
+		System.out.println("5. Thống kê lương nhân viên");
+		System.out.println("6. Đọc file");
+		System.out.println("7. Ghi file");
+		System.out.println("8. Kết thúc chương trình");
+		System.out.print("0. Quay lại menu chính");
 	}
-	
+	public static void nhanVien(QuanLyNhanVien qlnv, int chon){
+			switch(chon) {
+			case 0:{
+				System.out.println("---"); break;
+			}	
+			case 1:{
+				if (!qlnv.themNhanVien()){
+					System.out.println("ID nhân viên đã tồn tại");break;
+				}
+				break;
+			}
+			case 2:{
+				qlnv.hienDSNhanVien();
+				break;
+			}
+			case 3:{
+				System.out.println("Nhập id nhân viên cần tìm: ");
+				String idtim = sc.nextLine();
+				if(qlnv.timNhanVien(idtim)==null) 
+					System.out.println("Không tìm thấy nhân viên có id: "+idtim);
+				else 
+					System.out.println(qlnv.timNhanVien(idtim).toString());
+				break;
+			}
+			case 4:{
+				System.out.println("Nhập id nhân viên cần xóa: ");
+				String idxoa = sc.nextLine();
+				if(qlnv.XoaNhanVien(idxoa)==true) {
+					System.out.println("Xóa thành công");
+				}else {
+					System.out.println("Xóa thất bại");
+				}
+				break;
+			}
+			case 5:{
+				System.out.println("Thống kê lương nhân viên: ");
+				qlnv.thongKeLuong();
+				break;
+			}
+			case 6:{
+				qlnv.docFileNhanVien();
+				System.out.println("Đọc file thành công!");
+				break;
+			}
+			case 7:{
+				qlnv.ghiFileNhanVien();
+				System.out.println("Ghi thành công vào file thongtinnhanvien.txt!");
+				break;
+			}
+			case 8:{
+				System.out.println("Đã thoát chương trình!");
+				break;
+			}
+			default:{
+				System.out.println("Lỗi! Vui lòng chọn theo menu");
+				break;
+			}
+			}
+		}
+
 	public static void menuSanPham() {
 		System.out.println("-------------------------------MENU------------------------------");
 		System.out.println("1. Đọc dữ liệu từ file\n"
 				+ "2. Hiện danh sách sản phẩm\n"
 				+ "3. Thêm sản phẩm mới\n"
 				+ "4. Tìm sản phẩm\n"
-				+ "5.Cập nhật thông tin sản phẩm\n"
+				+ "5. Cập nhật thông tin sản phẩm\n"
 				+ "6. Sắp xếp theo giá từ cao --> thấp\n"
 				+ "7. Sắp xếp theo giá từ thấp --> cao \n"
-				+ "8. ghi dữ liệu vô file\n"
+				+ "8. Ghi dữ liệu vô file\n"
 				+ "9. Xóa sản phẩm\n"
-				+ "0. Thoát)");
+				+ "10. Cập nhật số lượng sản phẩm\n"
+				+ "11. Kết thúc chương trình\n"
+				+ "0. Quay lại menu chính.");
 	}
 	public static void sanPham(QuanLySanPham qlsp, int chon) {
 		switch(chon) {
@@ -133,7 +209,7 @@ public class Main {
 			qlsp.hienSP(); break;
 		}
 		case 8:{
-			qlsp.ghiFile(); System.out.println("ghi file thành công!");
+			qlsp.ghiFile(); System.out.println("Ghi thành công vào file thongtinsanpham.txt!");
 			break;
 		}
 		case 9:{
@@ -142,8 +218,25 @@ public class Main {
 			String masp = sc.nextLine();
 			qlsp.xoa(masp); break;
 		}
-		case 0:{
+		case 10:{
+			sc.nextLine();
+			System.out.print("Nhập mã sản phẩm muốn cập nhật số lượng: ");
+			String masp = sc.nextLine();
+			SanPham sp = qlsp.timKiemSP(masp);
+			if (sp != null){
+				System.out.print("Nhập số lượng mới: ");
+				int sl = sc.nextInt();
+				sp.setSoLuong(String.valueOf(sl));
+				System.out.println("Cập nhật số lượng thành công!");
+			}
+			else System.out.println("Mã sản phẩm không tồn tại!");
+			break;
+		}
+		case 11:{
 			System.out.println("Đã thoát chương trình"); break;
+		}
+		case 0:{
+			System.out.println("---"); break;
 		}
 		default:{
 			System.err.println("lỗi! Vui lòng chọn theo menu"); break;
@@ -158,15 +251,16 @@ public class Main {
 				+ "3. Xuất hóa đơn ra file.\n"
 				+ "4. Lọc hóa đơn theo thời gian.\n"
 				+ "5. Hiện thị chi tiết hóa đơn.\n"
-				+ "0. Thoát.");
+				+ "6. Kết thúc chương trình.\n"
+				+ "0. quay lại menu chính.");
 	}
 	public static void hoaDon(QuanLyHoaDon qlhd, QuanLyKhachHang qlkh, QuanLySanPham qlsp, int chon) {
-		qlkh.docFile();
-		qlsp.docFile();
 		switch(chon) {
+		case 0:{
+			System.out.println("---"); break;
+		}
 		case 1: {
 			HoaDon hd = new HoaDon();
-			sc.nextLine();
 			hd.khoiTaoHoaDon(qlsp, qlkh);
 			qlhd.themHD(hd);
 			break;
@@ -193,7 +287,7 @@ public class Main {
 			qlhd.hienThiChiTietHD(maHD);
 			break;
 		}
-		case 0:{
+		case 6:{
 			System.out.println("đã thoát chương trình!"); break;
 		}
 		default:{
@@ -210,10 +304,14 @@ public class Main {
 				+ "4. Lưu kho(quanlykho.txt).\n"
 				+ "5. Đọc file.\n"
 				+ "6. Cập nhật kho.\n"
-				+ "0. Thoát.");
+				+ "7. Kết thúc chương trình.\n"
+				+ "0. Quay lại menu chính.");
 	}
 	public static void kho(QuanLyKho qlk,QuanLySanPham qlsp ,int chon) {
 		switch(chon){
+			case 0:{
+				System.out.println("---"); break;
+			}
 			case 1:{
 				qlk.nhapKho();
 				break;
@@ -231,7 +329,7 @@ public class Main {
 			}
 			case 4:{
 				qlk.ghiFile();
-				System.out.println("Ghi file thành công!");
+				System.out.println("Ghi thành công vào file quanlykho.txt!");
 				break;
 			}
 			case 5:{
@@ -246,7 +344,7 @@ public class Main {
 				qlk.capNhatKho(maKho);
 				break;
 			}
-			case 0:{
+			case 7:{
 				System.out.println("Đã thoát chương trình!");
 				break;
 			}
@@ -256,31 +354,33 @@ public class Main {
 			}
 		}
 	}
-	
-	
 	//main
 	public static void main(String[] args) {
 		QuanLyKhachHang qlkh = new QuanLyKhachHang();
+		QuanLyNhanVien qlnv = new QuanLyNhanVien();
 		QuanLySanPham qlsp = new QuanLySanPham();
 		QuanLyHoaDon qlhd = new QuanLyHoaDon();
 		QuanLyKho qlk = new QuanLyKho();
-		
-		int chon, chon1 = 0, chon2 = 0, chon3 =0, chon4= 0, chon5 = 0;
-		System.out.println("1. Quản lý khách hàng.(xong)\n"
-				+ "2. Quản lý nhân viên(coming soon)\n"
-				+ "3. Quản lý sản phẩm(xong)\n"
-				+ "4. Quản lý hóa đơn(xong).\n"
-				+ "5. Quản lý kho.(xong)");
-		System.out.print("chọn: ");
-		chon = sc.nextInt();
+		int chon = 0, chon1 = 0, chon2 = 0, chon3 =0, chon4= 0, chon5 = 0;
 		do {
+			if (chon1 == 0 && chon2 == 0 && chon3 == 0 && chon4 == 0 && chon5 == 0) {
+				System.out.println("1. Quản lý khách hàng.\n"
+						+ "2. Quản lý nhân viên.\n"
+						+ "3. Quản lý sản phẩm.\n"
+						+ "4. Quản lý hóa đơn.\n"
+						+ "5. Quản lý kho.");
+				System.out.print("chọn: ");
+				chon = sc.nextInt();
+			}
 			//quản lý khách hàng
-			if(chon ==1) {
+			if(chon == 1) {
 				menuKhachHang(); System.out.print("chọn: "); chon1 = sc.nextInt();
 				khachHang(qlkh, chon1);
 			}
 			//quản lý nhân viên
 			else if (chon == 2) {	
+				menuNhanVien(); System.out.println("chọn: "); chon2 = sc.nextInt();
+				nhanVien(qlnv, chon2);
 			}
 			//quản lý sản phẩm
 			else if(chon == 3) {
@@ -294,15 +394,12 @@ public class Main {
 			}
 			//quan ly kho
 			else if (chon == 5){
-				qlsp.docFile();
 				menuKho(); System.out.print("chọn: "); chon5 = sc.nextInt();
 				kho(qlk, qlsp, chon5);
-				
 			}
 			else {
 				System.err.println("coming sôn");
 			}
-			
-		} while (chon1 != 0 || chon2 != 0 || chon3 != 0 || chon4 != 0 || chon5 != 0);
+		} while (chon1 != 8 || chon2 !=8  || chon3 != 11 || chon4 != 6 || chon5 != 7);
 	}
 }

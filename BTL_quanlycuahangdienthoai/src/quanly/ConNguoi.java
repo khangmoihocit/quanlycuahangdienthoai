@@ -40,7 +40,4 @@ public class ConNguoi {
 		String fomatString = "%-10s %-20s %-10s %-25s";
 		return String.format(fomatString, getId(), getTen(), getTuoi(), getDiaChi());
 	}
-	
-	
-	
 }

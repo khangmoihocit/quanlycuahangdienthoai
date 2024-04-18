@@ -6,10 +6,9 @@ Thông tin khách hàng :
 ID         Họ và tên            tuổi       địa chỉ                   số điện thoại   email               
 1093       Lê Văn Tâm           30         Quận 1, TP.HCM           0909876543      tam.s@gmail.com          
 Thông tin sản phẩm :
-Mã SP Tên SP                    SL    thương hiệu     hệ điều hành    kích thước màn  chip xử lý                   pin        Xuất xứ         giá(VND)       
-001   Oppo F21                  3     Oppo            Android         6.5 inch        MediaTek Dimensity 1200      4500mAh    Trung Quốc      7.200.000VND   
-002   Redmi Note 11 Pro         4     Xiaomi          Android         6.78 inch       Qualcomm Snapdragon 778G     5000mAh    Trung Quốc      6.900.000VND   
-003   Samsung Galaxy A53        5     Samsung         Android         6.5 inch        Exynos 1200                  4800mAh    Hàn Quốc        8.500.000VND   
+Mã SP Tên SP               SL mua     thương hiệu     hệ điều hành    kích thước màn  chip xử lý                   pin        Xuất xứ         giá(VND)       
+001   Oppo F21             1          Oppo            Android         6.5 inch        MediaTek Dimensity 1200      4500mAh    Trung Quốc      7.200.000VND   
+002   Redmi Note 11 Pro    1          Xiaomi          Android         6.78 inch       Qualcomm Snapdragon 778G     5000mAh    Trung Quốc      6.900.000VND   
 
-Thành tiền: 22600000VND
-Ngày tạo hóa đơn: 16-04-2024 12:01:12
+Thành tiền: 14100000VND
+Thời gian tạo hóa đơn: 18-04-2024 10:11:36

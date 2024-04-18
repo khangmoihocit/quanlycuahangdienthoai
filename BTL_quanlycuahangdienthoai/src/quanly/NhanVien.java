@@ -1,6 +1,8 @@
 package quanly;
 
-public class NhanVien extends ConNguoi{
+import java.util.Scanner;
+
+public class NhanVien extends ConNguoi {
 	private double luong;
 
 	public NhanVien(String id, String ten, String tuoi, String diaChi, double luong) {
@@ -8,6 +10,7 @@ public class NhanVien extends ConNguoi{
 		this.luong = luong;
 	}
 	public NhanVien() {
+		super();
 	}
 	public double getLuong() {
 		return luong;
@@ -15,10 +18,22 @@ public class NhanVien extends ConNguoi{
 	public void setLuong(double luong) {
 		this.luong = luong;
 	}
+	public void nhap() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập id nhân viên: ");
+		setId(sc.nextLine());
+		System.out.println("Nhập họ tên nhân viên: ");
+		setTen(sc.nextLine());
+		System.out.println("Nhập tuổi nhân viên: ");
+		setTuoi(sc.nextLine());
+		System.out.println("Nhập địa chỉ nhân viên: ");
+		setDiaChi(sc.nextLine());
+		System.out.println("Nhập lương nhân viên: ");
+		setLuong(sc.nextDouble());
+	}
 	@Override
 	public String toString() {
 		String fomatString = "%-15s";
 		return super.toString() + String.format(fomatString, luong);
 	}
-	
 }

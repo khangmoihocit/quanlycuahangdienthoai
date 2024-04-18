@@ -75,13 +75,13 @@ public class QuanLyHoaDon {
 			}
 		}
 	}
-	//ghi file
-	public void ghiFile(){
-		quanLyFile.outputHD(dsHoaDon);
-	}
 	//xuat hoa don ra file
 	public void xuatHoaDon(String maHD){
 		HoaDon hd = timHoaDon(maHD);
-		quanLyFile.xuatHD(hd.toString());
+		if (hd != null){
+			quanLyFile.xuatHD(hd.toString());
+			System.out.println("Xuất hóa đơn thành công ra file thongtinhoadon.txt!");
+		}
+		else System.out.println("Hóa đơn không tồn tại. Vui lòng thử lại!");
 	}
 }

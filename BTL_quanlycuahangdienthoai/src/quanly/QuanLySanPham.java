@@ -30,7 +30,7 @@ public class QuanLySanPham {
 		dsSanPham.add(x);
 	}
 	public void hienSP() {
-		String format = "%-5s %-25s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
+		String format = "%-5s %-20s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
 		String tieuDe = String.format(format, "Mã SP", "Tên SP", "SL", "thương hiệu", "hệ điều hành", 
 		"kích thước màn", "chip xử lý", "pin", "Xuất xứ", "giá(VND)");
 		System.out.println(tieuDe);
@@ -48,7 +48,6 @@ public class QuanLySanPham {
 	
 	public void sapXepTheoMaSP() {
 		Collections.sort(dsSanPham, new Comparator<SanPham>() {
-
 			@Override
 			public int compare(SanPham o1, SanPham o2) {
 				int msp1 = Integer.parseInt(o1.getMaSP());
@@ -82,6 +81,7 @@ public class QuanLySanPham {
 		SanPham x = timKiemSP(maSP);
 		if (x != null) {
 			x.input();
+			System.out.println("cập nhật thành công!");
 		}
 		else {
 			System.out.println("mã sản phẩm không tồn tại!");

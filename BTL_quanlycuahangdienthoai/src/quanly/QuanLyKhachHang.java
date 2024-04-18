@@ -78,6 +78,7 @@ public class QuanLyKhachHang {
 			System.out.print("Địa chỉ: "); x.setDiaChi(sc.nextLine());
 			System.out.print("Số điện thoại: "); x.setSdt(sc.nextLine());
 			System.out.print("Email: "); x.setEmail(sc.nextLine());
+			System.out.println("Cập nhập thành công!");
 		}
 		else {
 			System.out.println("id khách hàng không tồn tại!");

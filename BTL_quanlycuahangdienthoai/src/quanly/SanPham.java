@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SanPham {
-	private String maSP, tenSP, soLuongSP, thuongHieu, heDieuHanh, kichThuocMan, chip, pin, xuatXu, giaString;
+	private String maSP, tenSP, soLuongSP , thuongHieu, heDieuHanh, kichThuocMan, chip, pin, xuatXu, giaString;
+	
+	private int soLuongMua; // số lượng mua sản phẩm trong hóa đơn
 	static int a = 0;
 	//khởi tạo mã sản phẩm tự động tăng
 	public static String maSP(String s, int a) {
@@ -40,6 +42,73 @@ public class SanPham {
 		this.giaString = giaString;
 	}
 
+	//dùng để chuyển lại giá tiền, vì giá tiền đang có dạng là 100.000.000VND
+	public String chuanHoa(String s) {
+		ArrayList<String> arr = new ArrayList<String>();
+		String[] a = s.split("");
+		for (int i=0; i<a.length; ++i) {
+			arr.add(a[i]);
+		}
+		String res = "";
+		for (int i=0; i< arr.size(); ++i) {
+			if (arr.get(i).equals(".")) {
+				arr.remove(i);
+			}
+			if (arr.get(i).equals("V")) {
+				arr.remove(i);
+			}
+			if (arr.get(i).equals("N")) {
+				arr.remove(i);
+			}
+			if (arr.get(i).equals("D")) {
+				arr.remove(i);
+			}
+			else {
+				res+= arr.get(i);
+			}
+		}
+		return res;
+	}
+	
+	//giam so luong san pham trong kho khi mua hang thanh cong
+	public void capNhatSoLuong(int soLuong){
+		int sl = Integer.parseInt(getSoLuong());
+		while(true){
+			if (soLuong <= sl){
+				setSoLuongMua(soLuong);
+				sl = sl - soLuong;
+				//cap nhat so luong mua
+				break;
+			}
+			else{
+				System.out.println("Số lượng sản phẩm trong kho không đủ! Vui lòng nhập lại.");
+				System.out.print("Số lượng: ");
+				soLuong = new Scanner(System.in).nextInt();
+			}
+		}
+		setSoLuong(String.valueOf(sl));
+	}
+	
+	//nhập thông tin sản phẩm từ bàn phím
+	public void input() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhập tên sản phẩm: "); setTenSP(sc.nextLine());
+		System.out.print("số lượng: "); setSoLuong(sc.nextLine());
+		System.out.print("thương hiệu sp: "); setThuongHieu(sc.nextLine());
+		System.out.print("hệ điều hành: "); setHeDieuHanh(sc.nextLine());
+		System.out.print("kích thước màn hình: "); setKichThuocMan(sc.nextLine());
+		System.out.print("chip xử lý: ");setChip(sc.nextLine());
+		System.out.print("pin: ");setPin(sc.nextLine());
+		System.out.print("xuất xứ: ");setXuatXu(sc.nextLine());
+		System.out.print("giá SP: ");setGiaString(sc.nextLine());
+	}
+	
+	public int getSoLuongMua() {
+		return soLuongMua;
+	}
+	public void setSoLuongMua(int soLuongMua) {
+		this.soLuongMua = soLuongMua;
+	}
 	public String getMaSP() {
 		return maSP;
 	}
@@ -119,48 +188,10 @@ public class SanPham {
 	public void setGiaString(String giaString) {
 		this.giaString = giaString;
 	}
-	public void input() {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Nhập tên sản phẩm: "); setTenSP(sc.nextLine());
-		System.out.print("số lượng: "); setSoLuong(sc.nextLine());
-		System.out.print("thương hiệu sp: "); setThuongHieu(sc.nextLine());
-		System.out.print("hệ điều hành: "); setHeDieuHanh(sc.nextLine());
-		System.out.print("kích thước màn hình: "); setKichThuocMan(sc.nextLine());
-		System.out.print("chip xử lý: ");setChip(sc.nextLine());
-		System.out.print("pin: ");setPin(sc.nextLine());
-		System.out.print("xuất xứ: ");setXuatXu(sc.nextLine());
-		System.out.print("giá SP: ");setGiaString(sc.nextLine());
-	}
-	public String chuanHoa(String s) {
-		ArrayList<String> arr = new ArrayList<String>();
-		String[] a = s.split("");
-		for (int i=0; i<a.length; ++i) {
-			arr.add(a[i]);
-		}
-		String res = "";
-		for (int i=0; i< arr.size(); ++i) {
-			if (arr.get(i).equals(".")) {
-				arr.remove(i);
-			}
-			if (arr.get(i).equals("V")) {
-				arr.remove(i);
-			}
-			if (arr.get(i).equals("N")) {
-				arr.remove(i);
-			}
-			if (arr.get(i).equals("D")) {
-				arr.remove(i);
-			}
-			else {
-				res+= arr.get(i);
-			}
-		}
-		return res;
-	}
-
+	
 	@Override
 	public String toString() {
-		String format = "%-5s %-25s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
+		String format = "%-5s %-20s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
 		return String.format(format, getMaSP(), getTenSP(), getSoLuong(), getThuongHieu(), getHeDieuHanh(),
 				getKichThuocMan(), getChip(), getPin(), getXuatXu(), getGiaString());
 	}
@@ -171,6 +202,7 @@ public class SanPham {
 		this.soLuongSP = soLuongSP;
 	}
 
+	//tạo hash code và equals để so sánh sản phẩm khi cho vô set ở class kho
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -193,5 +225,12 @@ public class SanPham {
 		} else if (!tenSP.equals(other.tenSP))
 			return false;
 		return true;
+	}
+	
+	//hien san pham trong hoa don
+	public String toStringHD() {
+		String format = "%-5s %-20s %-10s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
+		return String.format(format, getMaSP(), getTenSP(), getSoLuongMua(), getThuongHieu(), getHeDieuHanh(),
+				getKichThuocMan(), getChip(), getPin(), getXuatXu(), getGiaString());
 	}
 }
