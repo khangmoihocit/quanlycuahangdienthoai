@@ -1,6 +1,5 @@
 package quanly;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -19,11 +18,11 @@ public class QuanLyNhanVien {
 	}
 	
 	// Kiểm tra id nhân viên
-	public boolean CheckIdNhanVien(String IdNhanVien) {
+	public boolean checkIdNhanVien(String idNhanVien) {
 		Iterator<NhanVien> it = dsNhanVien.iterator();
 		while(it.hasNext()) {
 			NhanVien nhanvien = it.next();
-			if(nhanvien.getId().equals(IdNhanVien)) {
+			if(nhanvien.getId().equals(idNhanVien)) {
 				return true;
 			}
 		}
@@ -34,7 +33,7 @@ public class QuanLyNhanVien {
 		while(true) {
 			NhanVien nhanvien = new NhanVien();
 			nhanvien.nhap();
-			if(CheckIdNhanVien(nhanvien.getId())==false) {
+			if(checkIdNhanVien(nhanvien.getId())==false) {
 				dsNhanVien.add(nhanvien);
 				return true;
 			}
@@ -61,7 +60,7 @@ public class QuanLyNhanVien {
 		return null;
 	}
 	// Xóa nhân viên 
-	public boolean XoaNhanVien(String IDnhanvien) {
+	public boolean xoaNhanVien(String IDnhanvien) {
 		NhanVien nhanvien = timNhanVien(IDnhanvien);
 		if(nhanvien != null) {
 			System.out.println("Bạn có muốn xóa nhân viên "+nhanvien.getId()+ "? \n1-xóa, 2-không xóa");

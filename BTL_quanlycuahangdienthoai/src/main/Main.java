@@ -102,7 +102,7 @@ public class Main {
 			}
 			case 3:{
 				sc.nextLine();
-				System.out.print("Nhập id nhân viên cần tìm: ");
+				System.out.println("Nhập id nhân viên cần tìm: ");
 				String idtim = sc.nextLine();
 				if(qlnv.timNhanVien(idtim)==null) 
 					System.out.println("Không tìm thấy nhân viên có id: "+idtim);
@@ -117,7 +117,7 @@ public class Main {
 				sc.nextLine();
 				System.out.println("Nhập id nhân viên cần xóa: ");
 				String idxoa = sc.nextLine();
-				if(qlnv.XoaNhanVien(idxoa)==true) {
+				if(qlnv.xoaNhanVien(idxoa)==true) {
 					System.out.println("Xóa thành công");
 				}else {
 					System.out.println("Xóa thất bại");

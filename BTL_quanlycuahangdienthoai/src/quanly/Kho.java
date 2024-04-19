@@ -8,12 +8,12 @@ public class Kho {
     private String maKho, tenKhuVuc, ghiChu;
     private NhanVien nhanVien;
     private Set<SanPham> dsSanPham; //sử dụng set để tránh lưu trùng sản phẩm có trong danh sách
-    public Kho(String maKho, String tenKhuVuc, String ghiChu, NhanVien nv) {
+    public Kho(String maKho, String tenKhuVuc, String ghiChu, NhanVien nhanVien) {
         this.maKho = maKho;
         this.tenKhuVuc = tenKhuVuc;
         this.ghiChu = ghiChu;
         dsSanPham = new LinkedHashSet<SanPham>();
-        this.nhanVien = nv;
+        this.nhanVien = nhanVien;
     }
     public Kho() {
         // dsSanPham = new ArrayList<SanPham>();

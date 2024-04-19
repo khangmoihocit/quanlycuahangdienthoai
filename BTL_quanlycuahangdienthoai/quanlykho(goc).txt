@@ -1,7 +1,3 @@
-003
-khu vuc C
-xiaomi
-8456
 001
 khu vuc A
 realme
@@ -10,3 +6,7 @@ realme
 khu vuc B
 samsung
 2389
+003
+khu vuc C
+xiaomi
+8456
