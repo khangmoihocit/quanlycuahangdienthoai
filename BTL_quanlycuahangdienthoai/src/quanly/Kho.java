@@ -31,7 +31,7 @@ public class Kho {
         int n = 0;
         while(true) {
             n++;
-            System.out.print("Nhập nhân viên quản lý: ");
+            System.out.print("Nhập pID nhân viên quản lý: ");
             String tenNV = sc.nextLine();
             NhanVien nv = qlnv.timNhanVien(tenNV);
             if (nv != null) {
@@ -40,6 +40,7 @@ public class Kho {
             }
             else if(n == 3){
                 System.out.println("Nhập sai quá 3 lần! Hủy thêm kho!");
+                break;
             }
             else {
                 System.err.println("Nhân viên không tồn tại! Vui lòng nhập lại.");

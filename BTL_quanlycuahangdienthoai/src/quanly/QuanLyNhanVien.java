@@ -54,7 +54,7 @@ public class QuanLyNhanVien {
 		Iterator<NhanVien> it = dsNhanVien.iterator();
 		while(it.hasNext()) {
 			NhanVien nhanvien = it.next();
-			if(nhanvien.getId().equals(IDnhanvien)) {
+			if(nhanvien.getId().equalsIgnoreCase(IDnhanvien)) {
 				return nhanvien;
 			}
 		}
