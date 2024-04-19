@@ -101,15 +101,20 @@ public class Main {
 				break;
 			}
 			case 3:{
-				System.out.println("Nhập id nhân viên cần tìm: ");
+				sc.nextLine();
+				System.out.print("Nhập id nhân viên cần tìm: ");
 				String idtim = sc.nextLine();
 				if(qlnv.timNhanVien(idtim)==null) 
 					System.out.println("Không tìm thấy nhân viên có id: "+idtim);
-				else 
+				else {
+					String fomatString = "%-10s %-20s %-10s %-25s %-15s";
+					System.out.println(String.format(fomatString, "ID", "Tên", "Tuổi", "Địa chỉ", "Lương"));
 					System.out.println(qlnv.timNhanVien(idtim).toString());
+				}
 				break;
 			}
 			case 4:{
+				sc.nextLine();
 				System.out.println("Nhập id nhân viên cần xóa: ");
 				String idxoa = sc.nextLine();
 				if(qlnv.XoaNhanVien(idxoa)==true) {

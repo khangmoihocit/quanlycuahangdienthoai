@@ -90,9 +90,7 @@ public class QuanLyNhanVien {
 		});
 		// In danh sách nhân viên và tiền lương tương ứng
 		System.out.println("Danh sách nhân viên theo thứ tự giảm dần của tiền lương:");
-	    for (NhanVien nv : copyDSnhanvien) {
-	        System.out.println("ID: " + nv.getId() + ", Tên: " + nv.getTen() + ", Lương: " + nv.getLuong());
-	    }
+	    hienDSNhanVien();
 	}
 	
 	//doc file
