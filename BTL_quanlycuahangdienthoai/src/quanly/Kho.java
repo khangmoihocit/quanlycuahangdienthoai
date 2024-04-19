@@ -8,12 +8,12 @@ public class Kho {
     private String maKho, tenKhuVuc, ghiChu;
     private NhanVien nhanVien;
     private Set<SanPham> dsSanPham; //sử dụng set để tránh lưu trùng sản phẩm có trong danh sách
-    public Kho(String maKho, String tenKhuVuc, String ghiChu, String tenNV) {
+    public Kho(String maKho, String tenKhuVuc, String ghiChu, NhanVien nv) {
         this.maKho = maKho;
         this.tenKhuVuc = tenKhuVuc;
         this.ghiChu = ghiChu;
         dsSanPham = new LinkedHashSet<SanPham>();
-        this.nhanVien.setTen(tenNV);
+        this.nhanVien = nv;
     }
     public Kho() {
         // dsSanPham = new ArrayList<SanPham>();
@@ -31,7 +31,7 @@ public class Kho {
         int n = 0;
         while(true) {
             n++;
-            System.out.print("Nhập pID nhân viên quản lý: ");
+            System.out.print("Nhập ID nhân viên quản lý: ");
             String tenNV = sc.nextLine();
             NhanVien nv = qlnv.timNhanVien(tenNV);
             if (nv != null) {
@@ -80,7 +80,7 @@ public class Kho {
     @Override
     public String toString() {
         String fomat = "%-15s %-15s %-15s %-20s";
-        return String.format(fomat, maKho, tenKhuVuc, ghiChu, nhanVien.getTen());
+        return String.format(fomat, getMaKho(), getTenKhuVuc(), getGhiChu(), getNhanVien().getTen());
     }
 
     public String getMaKho() {

@@ -333,7 +333,7 @@ public class Main {
 				break;
 			}
 			case 5:{
-				qlk.docFile();
+				qlk.docFile(qlnv);
 				System.out.println("Đọc file thành công!");
 				break;
 			}

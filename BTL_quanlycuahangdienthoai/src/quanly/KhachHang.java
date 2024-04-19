@@ -1,6 +1,4 @@
 package quanly;
-
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class KhachHang extends ConNguoi{
@@ -34,13 +32,10 @@ public class KhachHang extends ConNguoi{
 		System.out.print("Địa chỉ: "); setDiaChi(sc.nextLine());
 		System.out.print("Số điện thoại: "); setSdt(sc.nextLine());
 		System.out.print("Email: "); setEmail(sc.nextLine());
-		
 	}
 	@Override
 	public String toString() {
 		String fomatString = "%-15s %-25s";
 		return super.toString() + String.format(fomatString, getSdt(), getEmail());
 	}
-	
-	
 }

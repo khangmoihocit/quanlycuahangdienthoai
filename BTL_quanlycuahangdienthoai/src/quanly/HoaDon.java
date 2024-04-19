@@ -50,8 +50,6 @@ public class HoaDon {
 		this.dsSanPham = new ArrayList<SanPham>();
 		this.quanLyFile = new QuanLyFile();
 	}
-	
-	
 	// nhan vien nhap hoa don
 	public void khoiTaoHoaDon(QuanLySanPham qlsp, QuanLyKhachHang qlkh) {
 		Scanner sc = new Scanner(System.in);
@@ -84,7 +82,6 @@ public class HoaDon {
 					System.err.println("Sản phẩm không tồn tại! Vui lòng thử lại.");
 				}
 			}
-
 		}
 	}
 	

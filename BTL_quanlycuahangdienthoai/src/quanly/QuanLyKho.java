@@ -57,8 +57,8 @@ public class QuanLyKho {
     public void ghiFile(){
         quanLyFile.outputKho(dsKho);
     }
-    public void docFile(){
-        quanLyFile.inputKho(dsKho);
+    public void docFile(QuanLyNhanVien qlnv){
+        quanLyFile.inputKho(dsKho, qlnv);
     }
 
     public void capNhatKho(QuanLyNhanVien qlnv, String maKho){

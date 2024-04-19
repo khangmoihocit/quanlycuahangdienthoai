@@ -103,4 +103,11 @@ public class QuanLyNhanVien {
 	public void ghiFileNhanVien() {
 		qlf.outputNV(dsNhanVien);
 	}
+
+	public List<NhanVien> getDsNhanVien() {
+		return dsNhanVien;
+	}
+	public void setDsNhanVien(List<NhanVien> dsNhanVien) {
+		this.dsNhanVien = dsNhanVien;
+	}
 }
