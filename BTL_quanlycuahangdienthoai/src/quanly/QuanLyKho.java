@@ -26,9 +26,9 @@ public class QuanLyKho {
         return false;
     }
     //nhan vien nhap kho
-    public void nhapKho() {
+    public void nhapKho(QuanLyNhanVien qlnv) {
         Kho kho = new Kho();
-        kho.themKho();
+        kho.themKho(qlnv);
         if (!kiemTraMaKho(kho.getMaKho())) {
             dsKho.add(kho);
             System.out.println("Thêm kho thành công!");
@@ -61,10 +61,10 @@ public class QuanLyKho {
         quanLyFile.inputKho(dsKho);
     }
 
-    public void capNhatKho(String maKho){
+    public void capNhatKho(QuanLyNhanVien qlnv, String maKho){
         for (Kho kho : dsKho) {
             if (kho.getMaKho().equals(maKho)) {
-                kho.themKho();
+                kho.themKho(qlnv);
                 System.out.println("Cập nhật thành công!");
                 break;
             }

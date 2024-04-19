@@ -171,7 +171,7 @@ public class QuanLyFile {
 				writer.write(arr.get(i).getMaKho() + "\n");
 				writer.write(arr.get(i).getTenKhuVuc() + "\n");
 				writer.write(arr.get(i).getGhiChu() + "\n");
-				writer.write(arr.get(i).getTenNV() + "\n");
+				writer.write(arr.get(i).getNhanVien().getTen() + "\n");
 			}
 			writer.close();
 		} catch (Exception e) {

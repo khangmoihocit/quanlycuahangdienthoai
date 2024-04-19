@@ -307,13 +307,13 @@ public class Main {
 				+ "7. Kết thúc chương trình.\n"
 				+ "0. Quay lại menu chính.");
 	}
-	public static void kho(QuanLyKho qlk,QuanLySanPham qlsp ,int chon) {
+	public static void kho(QuanLyNhanVien qlnv, QuanLyKho qlk,QuanLySanPham qlsp ,int chon) {
 		switch(chon){
 			case 0:{
 				System.out.println("---"); break;
 			}
 			case 1:{
-				qlk.nhapKho();
+				qlk.nhapKho(qlnv);
 				break;
 			}
 			case 2:{
@@ -341,7 +341,7 @@ public class Main {
 				sc.nextLine();
 				System.out.print("Nhập mã kho muốn cập nhật: ");
 				String maKho = sc.nextLine();
-				qlk.capNhatKho(maKho);
+				qlk.capNhatKho(qlnv, maKho);
 				break;
 			}
 			case 7:{
@@ -395,7 +395,7 @@ public class Main {
 			//quan ly kho
 			else if (chon == 5){
 				menuKho(); System.out.print("chọn: "); chon5 = sc.nextInt();
-				kho(qlk, qlsp, chon5);
+				kho(qlnv, qlk, qlsp, chon5);
 			}
 			else {
 				System.err.println("coming sôn");

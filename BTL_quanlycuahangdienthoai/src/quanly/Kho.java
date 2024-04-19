@@ -6,23 +6,21 @@ import java.util.Set;
 
 public class Kho {
     private String maKho, tenKhuVuc, ghiChu;
-    private String tenNV;
-    // private ArrayList<SanPham> dsSanPham;
+    private NhanVien nhanVien;
     private Set<SanPham> dsSanPham; //sử dụng set để tránh lưu trùng sản phẩm có trong danh sách
     public Kho(String maKho, String tenKhuVuc, String ghiChu, String tenNV) {
         this.maKho = maKho;
         this.tenKhuVuc = tenKhuVuc;
         this.ghiChu = ghiChu;
-        this.tenNV = tenNV;
-        // dsSanPham = new ArrayList<SanPham>();
         dsSanPham = new LinkedHashSet<SanPham>();
+        this.nhanVien.setTen(tenNV);
     }
     public Kho() {
         // dsSanPham = new ArrayList<SanPham>();
         dsSanPham = new LinkedHashSet<SanPham>();
     }
     //nhan vien tao them kho
-    public void themKho(){
+    public void themKho(QuanLyNhanVien qlnv){
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập mã kho: ");
         setMaKho(sc.nextLine());
@@ -30,8 +28,23 @@ public class Kho {
         setTenKhuVuc(sc.nextLine());
         System.out.print("Nhập ghi chú: ");
         setGhiChu(sc.nextLine());
-        System.out.print("Nhập nhân viên quản lý: ");
-        setTenNV(sc.nextLine());
+        int n = 0;
+        while(true) {
+            n++;
+            System.out.print("Nhập nhân viên quản lý: ");
+            String tenNV = sc.nextLine();
+            NhanVien nv = qlnv.timNhanVien(tenNV);
+            if (nv != null) {
+                setNhanVien(nv);
+                break;
+            }
+            else if(n == 3){
+                System.out.println("Nhập sai quá 3 lần! Hủy thêm kho!");
+            }
+            else {
+                System.err.println("Nhân viên không tồn tại! Vui lòng nhập lại.");
+            }
+        }
     }
     //khoi tao kho
     public void khoiTaokho(QuanLySanPham qlsp) {
@@ -47,7 +60,7 @@ public class Kho {
         System.out.println("Mã kho: " + maKho);
         System.out.println("Tên khu vực: " + tenKhuVuc);
         System.out.println("Ghi chú: " + ghiChu);
-        System.out.println("Nhân viên quản lý: " + getTenNV());
+        System.out.println("Nhân viên quản lý: " + nhanVien.getTen());
         System.out.println("Danh sách sản phẩm: ");
         String format = "%-5s %-20s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
 		String tieuDe = String.format(format, "Mã SP", "Tên SP", "SL", "thương hiệu", "hệ điều hành", 
@@ -66,7 +79,7 @@ public class Kho {
     @Override
     public String toString() {
         String fomat = "%-15s %-15s %-15s %-20s";
-        return String.format(fomat, maKho, tenKhuVuc, ghiChu, getTenNV());
+        return String.format(fomat, maKho, tenKhuVuc, ghiChu, nhanVien.getTen());
     }
 
     public String getMaKho() {
@@ -87,16 +100,17 @@ public class Kho {
     public void setGhiChu(String ghiChu) {
         this.ghiChu = ghiChu;
     }
-    public String getTenNV() {
-        return tenNV;
-    }
-    public void setTenNV(String tenNV) {
-        this.tenNV = tenNV;
-    }
     public Set<SanPham> getDsSanPham() {
         return dsSanPham;
     }
     public void setDsSanPham(Set<SanPham> dsSanPham) {
         this.dsSanPham = dsSanPham;
     }
+    public NhanVien getNhanVien() {
+        return nhanVien;
+    }
+    public void setNhanVien(NhanVien nhanVien) {
+        this.nhanVien = nhanVien;
+    }
+
 }
