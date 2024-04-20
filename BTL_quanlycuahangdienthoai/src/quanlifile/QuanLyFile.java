@@ -130,7 +130,6 @@ public class QuanLyFile {
 	public void xuatHD(String s) {
 		try {
 			FileWriter writer = new FileWriter(fileHD);
-			writer.write("\n------------------THÔNG TIN HÓA ĐƠN-----------------\n");
 			writer.write(s);
 			writer.close();
 		} catch (IOException e) {

@@ -185,7 +185,7 @@ public class Main {
 			String masp = sc.nextLine();
 			SanPham sp = qlsp.timKiemSP(masp);
 			if (sp != null){
-				String format = "%-5s %-25s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
+				String format = "%-5s %-20s %-5s %-15s %-15s %-15s %-28s %-10s %-15s %-15s";
 				String tieuDe = String.format(format, "Mã SP", "Tên SP", "SL", "thương hiệu", "hệ điều hành", 
 				"kích thước màn", "chip xử lý", "pin", "Xuất xứ", "giá(VND)");
 				System.out.println(tieuDe);

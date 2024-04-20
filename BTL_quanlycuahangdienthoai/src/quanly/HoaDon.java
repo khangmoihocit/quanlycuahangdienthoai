@@ -53,17 +53,25 @@ public class HoaDon {
 	// nhan vien nhap hoa don
 	public void khoiTaoHoaDon(QuanLySanPham qlsp, QuanLyKhachHang qlkh) {
 		Scanner sc = new Scanner(System.in);
+		int a =0;
 		while(true) {
 			System.out.print("Nhập mã khách hàng: "); String maKH = sc.nextLine();
 			this.khachHang = qlkh.timKH(maKH);
 			if (khachHang == null) {
 				System.err.println("Khách hàng không tồn tại! Vui lòng nhập lại.\n");
+				a++;
 			}
-			else break;
+			else{
+				break;
+			}
+			if (a == 3) {
+				System.err.println("Bạn đã nhập sai quá 3 lần! Hãy thử lại sau.");
+				break;
+			}
 		}
 		System.out.print("nhập số lượng sản phẩm: ");
 		int n = sc.nextInt(); sc.nextLine();
-		int i = 1;
+		int i = 1; int b = 0;
 		//khi số lượng(n) sản phẩm bằng với với số lượng  đã đc thêm vào danh sách thì dừng
 		while(dsSanPham.size() != n){	
 			while(i <= n) {
@@ -80,6 +88,11 @@ public class HoaDon {
 				}
 				else{
 					System.err.println("Sản phẩm không tồn tại! Vui lòng thử lại.");
+					b++;
+				}
+				if (b == 3){
+					System.err.println("Bạn đã nhập sai quá 3 lần! Hãy thử lại sau.");
+					break;
 				}
 			}
 		}
