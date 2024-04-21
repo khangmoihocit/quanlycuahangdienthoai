@@ -112,7 +112,6 @@ public class SanPham {
 	public String getMaSP() {
 		return maSP;
 	}
-
 	public void setMaSP(String maSP) {
 		this.maSP = maSP;
 	}

@@ -56,8 +56,8 @@ public class QuanLySanPham {
 			}
 		});
 	}
-	
-	public SanPham timKiemSP(String maSP) { //binary_Search
+	//binary_Search
+	public SanPham timKiemSP(String maSP) { 
 		sapXepTheoMaSP();
 		int msp = Integer.parseInt(maSP);
 		int l = 0, r = dsSanPham.size() - 1;
