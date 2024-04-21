@@ -25,10 +25,10 @@ public class Main {
 				+ "0. Quay lại menu chính");
 
 	}
-	public static void khachHang(QuanLyKhachHang qlkh,int chon) {
+	public static void quanLyKhachHang(QuanLyKhachHang qlkh,int chon) {
 		switch (chon) {
 		case 0:{
-			System.out.println("---"); break;
+			System.out.println("MENU CHÍNH"); break;
 		}
 		case 1: {
 			qlkh.inputKH();break;
@@ -85,10 +85,10 @@ public class Main {
 		System.out.println("8. Kết thúc chương trình");
 		System.out.println("0. Quay lại menu chính");
 	}
-	public static void nhanVien(QuanLyNhanVien qlnv, int chon){
+	public static void quanLyNhanVien(QuanLyNhanVien qlnv, int chon){
 			switch(chon) {
 			case 0:{
-				System.out.println("---"); break;
+				System.out.println("MENU CHÍNH"); break;
 			}	
 			case 1:{
 				if (!qlnv.themNhanVien()){
@@ -165,8 +165,11 @@ public class Main {
 				+ "11. Kết thúc chương trình\n"
 				+ "0. Quay lại menu chính.");
 	}
-	public static void sanPham(QuanLySanPham qlsp, int chon) {
+	public static void quanLySanPham(QuanLySanPham qlsp, int chon) {
 		switch(chon) {
+		case 0:{
+			System.out.println("MENU CHÍNH"); break;
+		}
 		case 1:{
 			qlsp.docFile();
 			System.out.println("Đọc file thành công!");
@@ -239,10 +242,7 @@ public class Main {
 		}
 		case 11:{
 			System.out.println("Đã thoát chương trình"); break;
-		}
-		case 0:{
-			System.out.println("---"); break;
-		}
+		}	
 		default:{
 			System.err.println("lỗi! Vui lòng chọn theo menu"); break;
 		}
@@ -259,10 +259,10 @@ public class Main {
 				+ "6. Kết thúc chương trình.\n"
 				+ "0. quay lại menu chính.");
 	}
-	public static void hoaDon(QuanLyHoaDon qlhd, QuanLyKhachHang qlkh, QuanLySanPham qlsp, int chon) {
+	public static void quanLyHoaDon(QuanLyHoaDon qlhd, QuanLyKhachHang qlkh, QuanLySanPham qlsp, int chon) {
 		switch(chon) {
 		case 0:{
-			System.out.println("---"); break;
+			System.out.println("MENU CHÍNH"); break;
 		}
 		case 1: {
 			HoaDon hd = new HoaDon();
@@ -312,10 +312,10 @@ public class Main {
 				+ "7. Kết thúc chương trình.\n"
 				+ "0. Quay lại menu chính.");
 	}
-	public static void kho(QuanLyNhanVien qlnv, QuanLyKho qlk,QuanLySanPham qlsp ,int chon) {
+	public static void quanLyKho(QuanLyNhanVien qlnv, QuanLyKho qlk,QuanLySanPham qlsp ,int chon) {
 		switch(chon){
 			case 0:{
-				System.out.println("---"); break;
+				System.out.println("MENU CHÍNH"); break;
 			}
 			case 1:{
 				qlk.nhapKho(qlnv);
@@ -381,27 +381,27 @@ public class Main {
 			//quản lý khách hàng
 			if(chon == 1) {
 				menuKhachHang(); System.out.print("chọn: "); chon1 = sc.nextInt();
-				khachHang(qlkh, chon1);
+				quanLyKhachHang(qlkh, chon1);
 			}
 			//quản lý nhân viên
 			else if (chon == 2) {	
 				menuNhanVien(); System.out.println("chọn: "); chon2 = sc.nextInt();
-				nhanVien(qlnv, chon2);
+				quanLyNhanVien(qlnv, chon2);
 			}
 			//quản lý sản phẩm
 			else if(chon == 3) {
 				menuSanPham(); System.out.print("chọn: "); chon3 = sc.nextInt();
-				sanPham(qlsp, chon3);
+				quanLySanPham(qlsp, chon3);
 			}
 			//quan ly hoa don
 			else if (chon == 4) {
 				menuHoaDon(); System.out.print("chọn: "); chon4 = sc.nextInt();
-				hoaDon(qlhd, qlkh, qlsp, chon4);
+				quanLyHoaDon(qlhd, qlkh, qlsp, chon4);
 			}
 			//quan ly kho
 			else if (chon == 5){
 				menuKho(); System.out.print("chọn: "); chon5 = sc.nextInt();
-				kho(qlnv, qlk, qlsp, chon5);
+				quanLyKho(qlnv, qlk, qlsp, chon5);
 			}
 			else {
 				System.err.println("coming sôn");
