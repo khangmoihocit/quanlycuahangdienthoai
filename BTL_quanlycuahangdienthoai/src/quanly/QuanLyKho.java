@@ -28,13 +28,14 @@ public class QuanLyKho {
     //nhan vien nhap kho
     public void nhapKho(QuanLyNhanVien qlnv) {
         Kho kho = new Kho();
-        kho.themKho(qlnv);
-        if (!kiemTraMaKho(kho.getMaKho())) {
-            dsKho.add(kho);
-            System.out.println("Thêm kho thành công!");
-        } else {
-            System.out.println("Mã kho đã tồn tại!");
-        }
+        if (kho.themKho(qlnv) == true){
+            if (!kiemTraMaKho(kho.getMaKho())) {
+                dsKho.add(kho);
+                System.out.println("Thêm kho thành công!");
+            } else {
+                System.out.println("Mã kho đã tồn tại!");
+            }
+        }     
     }
     // hien thi danh sach kho
     public void hienThiDanhSachKho() {

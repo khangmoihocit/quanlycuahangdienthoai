@@ -20,7 +20,8 @@ public class Kho {
         dsSanPham = new LinkedHashSet<SanPham>();
     }
     //nhan vien tao them kho
-    public void themKho(QuanLyNhanVien qlnv){
+    public boolean themKho(QuanLyNhanVien qlnv){
+        boolean check = false;
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập mã kho: ");
         setMaKho(sc.nextLine());
@@ -36,16 +37,20 @@ public class Kho {
             NhanVien nv = qlnv.timNhanVien(tenNV);
             if (nv != null) {
                 setNhanVien(nv);
+                check = true;
                 break;
             }
             else if(n == 3){
                 System.out.println("Nhập sai quá 3 lần! Hủy thêm kho!");
+                check = false;
                 break;
             }
             else {
                 System.err.println("Nhân viên không tồn tại! Vui lòng nhập lại.");
+                check = false;
             }
         }
+        return check;
     }
     //khoi tao kho
     public void khoiTaokho(QuanLySanPham qlsp) {

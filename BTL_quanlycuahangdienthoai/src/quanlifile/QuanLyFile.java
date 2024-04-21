@@ -1,6 +1,7 @@
 package quanlifile;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -13,7 +14,7 @@ import quanly.QuanLyNhanVien;
 import quanly.SanPham;
 
 public class QuanLyFile {
-	private File fileKH;
+	private File fileKH; 
 	private File fileNV;
 	private File fileSP;
 	private File fileHD;
@@ -29,28 +30,38 @@ public class QuanLyFile {
 	// khách hàng
 	public void inputKH(ArrayList<KhachHang> arr) {
 		try {
-			Scanner sc = new Scanner(fileKH);
-			while(sc.hasNext()) {
-				KhachHang x = new KhachHang(sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextLine());
+			FileReader fr = new FileReader(fileKH);
+			BufferedReader br = new BufferedReader(fr);
+			while(true) {
+				String line1 = br.readLine(); if(line1 == null) break;
+				String line2 = br.readLine();
+				String line3 = br.readLine();
+				String line4 = br.readLine();
+				String line5 = br.readLine();
+				String line6 = br.readLine();
+				KhachHang x = new KhachHang(line1, line2, line3, line4, line5, line6);
 				arr.add(x);
 			}
-			sc.close();
+			br.close();
+			fr.close();
 		} catch (IOException e) {
 			System.out.println(e);
 		}
 	}
 	public void outputKH(ArrayList<KhachHang> arr) {
 		try {
-			FileWriter writer = new FileWriter(fileKH);
-			for (int i=0; i<arr.size(); ++i) {
-				writer.write(arr.get(i).getId() + "\n");
-				writer.write(arr.get(i).getTen()+ "\n");
-				writer.write(arr.get(i).getTuoi()+ "\n");
-				writer.write(arr.get(i).getDiaChi()+ "\n");
-				writer.write(arr.get(i).getSdt()+ "\n");
-				writer.write(arr.get(i).getEmail()+ "\n");
+			FileWriter fw = new FileWriter(fileKH);
+			BufferedWriter bw = new BufferedWriter(fw);
+			for (KhachHang kh : arr){
+				bw.write(kh.getId() + "\n");
+				bw.write(kh.getTen() + "\n");
+				bw.write(kh.getTuoi() + "\n");
+				bw.write(kh.getDiaChi() + "\n");
+				bw.write(kh.getSdt() + "\n");
+				bw.write(kh.getEmail() + "\n");
 			}
-			writer.close();
+			bw.close();
+			fw.close();
 		} catch (IOException e) {
 			System.out.println(e);
 		}
@@ -108,19 +119,21 @@ public class QuanLyFile {
 	}
 	public void outputSP(ArrayList<SanPham> arr) {
 		try {
-			FileWriter writer = new FileWriter(fileSP);
-			for (int i=0; i<arr.size(); ++i) {
-				writer.write(arr.get(i).getTenSP() + "\n");
-				writer.write(arr.get(i).getSoLuong()+ "\n");
-				writer.write(arr.get(i).getThuongHieu()+ "\n");
-				writer.write(arr.get(i).getHeDieuHanh()+ "\n");
-				writer.write(arr.get(i).getKichThuocMan()+ "\n");
-				writer.write(arr.get(i).getChip()+ "\n");
-				writer.write(arr.get(i).getPin()+ "\n");
-				writer.write(arr.get(i).getXuatXu()+ "\n");
-				writer.write(arr.get(i).getGiaString()+ "\n");
+			FileWriter fw = new FileWriter(fileSP);
+			BufferedWriter bw = new BufferedWriter(fw);
+			for (SanPham sp : arr){
+				bw.write(sp.getTenSP() + "\n");
+				bw.write(sp.getSoLuong() + "\n");
+				bw.write(sp.getThuongHieu() + "\n");
+				bw.write(sp.getHeDieuHanh() + "\n");
+				bw.write(sp.getKichThuocMan() + "\n");
+				bw.write(sp.getChip() + "\n");
+				bw.write(sp.getPin() + "\n");
+				bw.write(sp.getXuatXu() + "\n");
+				bw.write(sp.getGiaString() + "\n");
 			}
-			writer.close();
+			bw.close();
+			fw.close();
 		} catch (IOException e) {
 			System.out.println(e);
 		}
@@ -129,9 +142,11 @@ public class QuanLyFile {
 	//xuat Hoa don
 	public void xuatHD(String s) {
 		try {
-			FileWriter writer = new FileWriter(fileHD);
-			writer.write(s);
-			writer.close();
+			FileWriter fw = new FileWriter(fileHD);
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(s);
+			bw.close();
+			fw.close();
 		} catch (IOException e) {
 			System.out.println(e);
 		}
@@ -158,14 +173,16 @@ public class QuanLyFile {
 	}
 	public void outputKho(ArrayList<Kho> arr){
 		try {
-			FileWriter writer = new FileWriter(fileKho);
-			for (int i=0; i < arr.size(); ++i){
-				writer.write(arr.get(i).getMaKho() + "\n");
-				writer.write(arr.get(i).getTenKhuVuc() + "\n");
-				writer.write(arr.get(i).getGhiChu() + "\n");
-				writer.write(arr.get(i).getNhanVien().getId() + "\n");
+			FileWriter fw = new FileWriter(fileKho);
+			BufferedWriter bw = new BufferedWriter(fw);
+			for (Kho kho : arr){
+				bw.write(kho.getMaKho() + "\n");
+				bw.write(kho.getTenKhuVuc() + "\n");
+				bw.write(kho.getGhiChu() + "\n");
+				bw.write(kho.getNhanVien().getId() + "\n");
 			}
-			writer.close();
+			bw.close();
+			fw.close();
 		} catch (Exception e) {
 		}
 	}
