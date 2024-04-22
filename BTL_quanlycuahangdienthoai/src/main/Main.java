@@ -408,4 +408,5 @@ public class Main {
 			}
 		} while (chon1 != 8 || chon2 !=8  || chon3 != 11 || chon4 != 6 || chon5 != 7);
 	}
+	
 }
